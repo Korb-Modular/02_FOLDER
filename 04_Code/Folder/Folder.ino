@@ -61,7 +61,7 @@ void loop() {
   int value2 = debouncer2.read();
 
   if (value1 == LOW) {
-    Serial.println("test");
+ //   Serial.println("test");
     if (temp1 == 0) {
       Wave_OSC1++;
       if (Wave_OSC1 > 4) Wave_OSC1 = 1;
@@ -82,10 +82,6 @@ void loop() {
   else {
     temp2 = 0;
   }
-
-
-
-
 
   switch (Wave_OSC1) {
     case 1 :
@@ -137,11 +133,6 @@ void loop() {
   LED = LED_OSC1 | LED_OSC2;
   Switch = Switch_OSC1 | Switch_OSC2;
 
-
-
-
-
-
-  uint8_t pinValues[] = { Switch, LED };
+  uint8_t pinValues[] = { LED,  Switch };
   sr.setAll(pinValues);
 }
